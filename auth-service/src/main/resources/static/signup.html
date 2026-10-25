@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Create Account</title>
+  <meta name="description" content="Register an account using Google, GitHub, Facebook or email">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient background glow elements -->
+  <div class="bg-ambient-blob blob-1"></div>
+  <div class="bg-ambient-blob blob-2"></div>
+
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      
+      <!-- Brand Logo / Header -->
+      <div class="text-center">
+        <a href="index.html" class="auth-brand">
+          <div class="auth-brand-icon">
+            <i class="bi bi-shield-lock-fill fs-5"></i>
+          </div>
+          <span>SecurePortal</span>
+        </a>
+      </div>
+
+      <div class="auth-header text-center">
+        <h1>Create Account</h1>
+        <p>Get started with your free account today</p>
+      </div>
+
+      <!-- Alert notifications container -->
+      <div id="signupAlertArea"></div>
+
+      <!-- OAuth Social Sign Up Providers -->
+      <div class="oauth-group">
+        <!-- Google Sign Up -->
+        <button type="button" class="btn btn-oauth btn-oauth-google" data-oauth-provider="google">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>Sign up with Google</span>
+        </button>
+
+        <div class="oauth-grid">
+          <!-- GitHub Sign Up -->
+          <button type="button" class="btn btn-oauth btn-oauth-github" data-oauth-provider="github">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub</span>
+          </button>
+
+          <!-- Facebook Sign Up -->
+          <button type="button" class="btn btn-oauth btn-oauth-facebook" data-oauth-provider="facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span>Facebook</span>
+          </button>
+
+          <!-- Alternative Direct OAuth Tab -->
+          <a href="login.html" class="btn btn-oauth" title="Existing account">
+            <i class="bi bi-box-arrow-in-right text-primary"></i>
+            <span>Log In</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="auth-divider">
+        <span>or sign up with email</span>
+      </div>
+
+      <!-- Manual Signup Form -->
+      <form id="signupForm" novalidate autocomplete="on">
+        
+        <!-- Full Name Input -->
+        <div class="mb-3">
+          <label for="signupName" class="form-label">Full Name</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="signupName" 
+              name="name"
+              placeholder="Alex Johnson" 
+              autocomplete="name" 
+              required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+        </div>
+
+        <!-- Email Input -->
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Email Address</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="signupEmail" 
+              name="email"
+              placeholder="alex@company.com" 
+              autocomplete="email" 
+              inputmode="email"
+              required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="mb-2">
+          <label for="signupPassword" class="form-label">Create Password</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="signupPassword" 
+              name="new-password"
+              placeholder="Create strong password" 
+              autocomplete="new-password" 
+              required>
+            <button 
+              type="button" 
+              class="btn btn-password-toggle" 
+              data-target="signupPassword" 
+              aria-label="Toggle password visibility" 
+              aria-pressed="false"
+              tabindex="-1">
+              <i class="bi bi-eye"></i>
+            </button>
+            <div class="invalid-feedback">Please choose a password meeting requirements.</div>
+          </div>
+
+          <!-- Dynamic Strength Meter -->
+          <div class="password-strength-container">
+            <div class="password-strength-meter">
+              <div class="strength-bar" id="strengthBar"></div>
+            </div>
+            <div class="strength-text">
+              <span>Password strength</span>
+              <span id="strengthLabel">Too weak</span>
+            </div>
+
+            <!-- Password Requirements Checklist -->
+            <ul class="password-criteria-list">
+              <li class="criteria-item" id="crit-length"><i class="bi bi-circle"></i> 8+ characters</li>
+              <li class="criteria-item" id="crit-upper"><i class="bi bi-circle"></i> Uppercase letter</li>
+              <li class="criteria-item" id="crit-lower"><i class="bi bi-circle"></i> Lowercase letter</li>
+              <li class="criteria-item" id="crit-number"><i class="bi bi-circle"></i> Number (0-9)</li>
+              <li class="criteria-item" id="crit-special"><i class="bi bi-circle"></i> Special character</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Confirm Password Input -->
+        <div class="mb-3 mt-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-check2-circle"></i></span>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="confirmPassword" 
+              placeholder="Repeat your password" 
+              autocomplete="new-password" 
+              required>
+            <button 
+              type="button" 
+              class="btn btn-password-toggle" 
+              data-target="confirmPassword" 
+              aria-label="Toggle password visibility" 
+              aria-pressed="false"
+              tabindex="-1">
+              <i class="bi bi-eye"></i>
+            </button>
+            <div class="invalid-feedback">Passwords must match.</div>
+          </div>
+        </div>
+
+        <!-- Terms and Conditions Checkbox -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="termsCheckbox" required>
+          <label class="form-check-label" for="termsCheckbox">
+            I agree to the <a href="#" class="text-decoration-none text-primary">Terms of Service</a> & <a href="#" class="text-decoration-none text-primary">Privacy Policy</a>
+          </label>
+          <div class="invalid-feedback">You must accept the terms before creating an account.</div>
+        </div>
+
+        <!-- Email OTP is the only supported manual signup channel for now -->
+        <input type="hidden" id="otpChannel" name="otpChannel" value="EMAIL">
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-auth-submit">
+          <span>Create Account</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+
+      <!-- Email OTP verification panel (shown after successful signup) -->
+      <section id="otpVerificationPanel" class="otp-panel d-none" aria-labelledby="otpHeading">
+        <div class="text-center mb-3">
+          <div class="otp-icon"><i class="bi bi-envelope-check"></i></div>
+          <h2 id="otpHeading" class="h4">Verify your email</h2>
+          <p class="text-muted">Enter the 6-digit code sent to <strong id="otpEmailLabel"></strong>.</p>
+          <p class="text-muted small">The code expires in 5 minutes.</p>
+        </div>
+
+        <div id="otpAlertArea" aria-live="polite"></div>
+
+        <p id="otpAttemptsRemaining" class="text-muted small text-center mb-3" aria-live="polite">
+          Verification attempts remaining: 5
+        </p>
+
+        <form id="verifyOtpForm" novalidate>
+          <div class="mb-3">
+            <label for="signupOtp" class="form-label">Email verification code</label>
+            <input type="text" class="form-control otp-input" id="signupOtp" name="otp"
+                   inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}"
+                   minlength="6" maxlength="6" placeholder="Enter 6-digit OTP" required>
+            <div class="invalid-feedback">Please enter the 6-digit OTP.</div>
+          </div>
+          <button type="submit" id="verifyOtpButton" class="btn btn-auth-submit">
+            <span>Verify Email</span>
+            <i class="bi bi-check-circle"></i>
+          </button>
+        </form>
+
+        <div class="text-center mt-3">
+          <p id="resendCountdownText" class="text-muted small">You can request another code in 60 seconds.</p>
+          <button type="button" id="resendOtpButton" class="btn btn-link" disabled>Resend OTP</button>
+        </div>
+      </section>
+
+      <!-- Footer switch link -->
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign in here</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap 5.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Auth Logic -->
+  <script src="js/auth.js"></script>
+</body>
+</html>

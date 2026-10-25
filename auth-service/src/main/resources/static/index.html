@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication Portal - Login & Sign Up</title>
+  <meta name="description" content="Modern authentication frontend with Google, GitHub, and Facebook OAuth">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient background glow elements -->
+  <div class="bg-ambient-blob blob-1"></div>
+  <div class="bg-ambient-blob blob-2"></div>
+
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      
+      <!-- Brand Logo / Header -->
+      <div class="text-center">
+        <a href="index.html" class="auth-brand">
+          <div class="auth-brand-icon">
+            <i class="bi bi-shield-lock-fill fs-5"></i>
+          </div>
+          <span>SecurePortal</span>
+        </a>
+      </div>
+
+      <!-- Tab Switcher for Seamless Interaction -->
+      <ul class="nav auth-nav-tabs" id="authTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#loginPane" type="button" role="tab" aria-controls="loginPane" aria-selected="true">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Sign In
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signupPane" type="button" role="tab" aria-controls="signupPane" aria-selected="false">
+            <i class="bi bi-person-plus me-1"></i> Sign Up
+          </button>
+        </li>
+      </ul>
+
+      <!-- Common Social OAuth Sign-In (Google, GitHub, Facebook) -->
+      <div class="oauth-group">
+        <!-- Google OAuth -->
+        <button type="button" class="btn btn-oauth btn-oauth-google" data-oauth-provider="google">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>Continue with Google</span>
+        </button>
+
+        <!-- GitHub & Facebook Row -->
+        <div class="row g-2">
+          <div class="col-6">
+            <button type="button" class="btn btn-oauth btn-oauth-github w-100" data-oauth-provider="github">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-oauth btn-oauth-facebook w-100" data-oauth-provider="facebook">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Facebook</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="auth-divider">
+        <span>or continue with email</span>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="tab-content" id="authTabContent">
+        
+        <!-- PANE 1: LOGIN -->
+        <div class="tab-pane fade show active" id="loginPane" role="tabpanel" aria-labelledby="login-tab">
+          <div id="loginAlertArea"></div>
+
+          <form id="loginForm" novalidate autocomplete="on">
+            <!-- Email / Username -->
+            <div class="mb-3">
+              <label for="loginIdentifier" class="form-label">Email or Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="loginIdentifier" 
+                  name="username"
+                  placeholder="name@company.com" 
+                  autocomplete="username" 
+                  inputmode="email"
+                  required>
+                <div class="invalid-feedback">Please enter your email or username.</div>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <label for="loginPassword" class="form-label">Password</label>
+                <a href="#forgotPasswordModal" class="small text-decoration-none text-primary fw-semibold" data-bs-toggle="modal">Forgot?</a>
+              </div>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="loginPassword" 
+                  name="password"
+                  placeholder="Enter your password" 
+                  autocomplete="current-password" 
+                  required>
+                <button 
+                  type="button" 
+                  class="btn btn-password-toggle" 
+                  data-target="loginPassword" 
+                  aria-label="Toggle password visibility" 
+                  aria-pressed="false"
+                  tabindex="-1">
+                  <i class="bi bi-eye"></i>
+                </button>
+                <div class="invalid-feedback">Please enter your password.</div>
+              </div>
+            </div>
+
+            <!-- Remember me -->
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="rememberMe" name="remember">
+              <label class="form-check-label" for="rememberMe">Remember this browser</label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-auth-submit">
+              <span>Sign In</span>
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </form>
+
+          <div class="auth-footer">
+            Dedicated page: <a href="login.html">Open Login Page</a>
+          </div>
+        </div>
+
+        <!-- PANE 2: SIGN UP -->
+        <div class="tab-pane fade" id="signupPane" role="tabpanel" aria-labelledby="signup-tab">
+          <div id="signupAlertArea"></div>
+
+          <form id="signupForm" novalidate autocomplete="on">
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="signupName" class="form-label">Full Name</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="signupName" 
+                  name="name"
+                  placeholder="Alex Johnson" 
+                  autocomplete="name" 
+                  required>
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="signupEmail" 
+                  name="email"
+                  placeholder="alex@company.com" 
+                  autocomplete="email" 
+                  inputmode="email"
+                  required>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-2">
+              <label for="signupPassword" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="signupPassword" 
+                  name="new-password"
+                  placeholder="Create strong password" 
+                  autocomplete="new-password" 
+                  required>
+                <button 
+                  type="button" 
+                  class="btn btn-password-toggle" 
+                  data-target="signupPassword" 
+                  aria-label="Toggle password visibility" 
+                  aria-pressed="false"
+                  tabindex="-1">
+                  <i class="bi bi-eye"></i>
+                </button>
+                <div class="invalid-feedback">Password is required.</div>
+              </div>
+
+              <!-- Password Strength Meter -->
+              <div class="password-strength-container">
+                <div class="password-strength-meter">
+                  <div class="strength-bar" id="strengthBar"></div>
+                </div>
+                <div class="strength-text">
+                  <span>Strength</span>
+                  <span id="strengthLabel"></span>
+                </div>
+
+                <!-- Checklist -->
+                <ul class="password-criteria-list">
+                  <li class="criteria-item" id="crit-length"><i class="bi bi-circle"></i> 8+ characters</li>
+                  <li class="criteria-item" id="crit-upper"><i class="bi bi-circle"></i> Uppercase</li>
+                  <li class="criteria-item" id="crit-lower"><i class="bi bi-circle"></i> Lowercase</li>
+                  <li class="criteria-item" id="crit-number"><i class="bi bi-circle"></i> Number (0-9)</li>
+                  <li class="criteria-item" id="crit-special"><i class="bi bi-circle"></i> Special symbol</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3 mt-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-check2-circle"></i></span>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="confirmPassword" 
+                  placeholder="Confirm your password" 
+                  autocomplete="new-password" 
+                  required>
+                <button 
+                  type="button" 
+                  class="btn btn-password-toggle" 
+                  data-target="confirmPassword" 
+                  aria-label="Toggle password visibility" 
+                  aria-pressed="false"
+                  tabindex="-1">
+                  <i class="bi bi-eye"></i>
+                </button>
+                <div class="invalid-feedback">Passwords must match.</div>
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="termsCheckbox" required>
+              <label class="form-check-label" for="termsCheckbox">
+                I agree to the <a href="#" class="text-decoration-none text-primary">Terms</a> and <a href="#" class="text-decoration-none text-primary">Privacy</a>
+              </label>
+              <div class="invalid-feedback">You must accept the terms.</div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-auth-submit">
+              <span>Create Account</span>
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </form>
+
+          <div class="auth-footer">
+            Dedicated page: <a href="signup.html">Open Signup Page</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Forgot Password Bootstrap Modal -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-bottom-0 pb-0">
+          <h2 class="modal-title fs-5 fw-bold" id="forgotPasswordModalLabel">Reset Password</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-4">
+          <p class="text-muted small mb-3">Enter your registered email address and we will send you a password recovery link.</p>
+          <div id="forgotPasswordAlert"></div>
+          <form id="forgotPasswordForm" novalidate>
+            <div class="mb-3">
+              <label for="resetEmail" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" id="resetEmail" placeholder="name@company.com" required autocomplete="email">
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+            </div>
+            <div class="d-grid gap-2 mt-4">
+              <button type="submit" class="btn btn-primary fw-semibold py-2">Send Reset Link</button>
+              <button type="button" class="btn btn-light text-secondary py-2" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Auth Logic -->
+  <script src="js/auth.js"></script>
+</body>
+</html>
